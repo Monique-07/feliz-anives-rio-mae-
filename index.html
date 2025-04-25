@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz Aniversário, Mãe!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #5c3a3a;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #fce4ec;
+      padding: 2rem;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/floral.png');
+      animation: fadeIn 2s ease-in;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #b71c1c;
+    }
+
+    section {
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .mensagem {
+      background: #fff8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      opacity: 1;
+      min-height: 200px;
+      white-space: pre-line;
+      border: 2px dashed #f8bbd0;
+    }
+
+    .typing {
+      border-right: 2px solid #d81b60;
+      white-space: pre-wrap;
+      overflow: hidden;
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #d81b60; }
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 1rem;
+      object-fit: cover;
+      border: 4px solid #f8bbd0;
+      padding: 4px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .galeria img.show {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 1s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #8d6e63;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    .petala {
+      position: fixed;
+      top: -10vh;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://i.imgur.com/IYXIvB4.png');
+      background-size: cover;
+      opacity: 0.8;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    #music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #f8bbd0;
+      color: #4e342e;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      z-index: 10000;
+    }
+
+    #music-btn:hover {
+      background: #f48fb1;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio id="musica">
+    <source src="musica.mp3" type="audio/mp3" />
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <button id="music-btn">Tocar música 🎶</button>
+
+  <header>
+    <h1>Feliz Aniversário, Mãe! 🎉🌸</h1>
+  </header>
+
+  <section>
+    <div class="mensagem">
+      <div id="mensagem" class="typing"></div>
+    </div>
+
+    <div class="galeria" id="galeria">
+      <img src="foto1.jpg" alt="Foto 1" />
+      <img src="foto2.jpg" alt="Foto 2" />
+      <img src="foto3.jpg" alt="Foto 3" />
+      <img src="foto4.jpg" alt="Foto 4" />
+      <img src="foto5.jpg" alt="Foto 5" />
+      <img src="foto6.jpg" alt="Foto 6" />
+      <img src="foto7.jpg" alt="Foto 7" />
+      <img src="foto8.jpg" alt="Foto 8" />
+      <img src="foto9.jpg" alt="Foto 9" />
+      <img src="foto10.jpg" alt="Foto 10" />
+    </div>
+  </section>
+
+  <footer>
+    Feito com muito amor 💗
+  </footer>
+
+  <script>
+  const textoMensagem = `Mãe,
+
+Hoje é um daqueles dias que o coração da gente fica quentinho só de lembrar de você.  
+É o seu aniversário, e mais do que te dar parabéns, eu quero te agradecer.  
+
+Agradecer por ser esse porto seguro, essa mulher forte, generosa e cheia de luz.  
+Você sempre esteve ali, em cada momento, em cada tropeço, em cada vitória.  
+
+Na correria da vida, nem sempre dá tempo de dizer,  
+mas hoje eu quero gritar bem alto:  
+eu te amo, mãe!
+Te amamos com todas as forças, com toda a gratidão do mundo.
+
+Que seu dia seja tão lindo quanto seu coração.  
+Que o novo ano que começa hoje venha cheio de saúde, paz, sorrisos e momentos bons.  
+Que você nunca esqueça o quanto é amada, admirada e essencial pra nossa família.  
+
+Você é exemplo, inspiração, carinho em forma de gente.  
+É a pessoa que me ensinou tudo o que importa: respeito, bondade, coragem e amor.  
+
+Curta muito seu dia! Ele é seu e você merece cada segundo de alegria.  
+Parabéns, mãe! Feliz vida! 🎉  
+Você merece o mundo — e se depender de nós, vai ter 💗  
+
+Com todo nosso amor,  
+Sua família.`;
+
+    
+    let i = 0;
+    function digitarTexto() {
+      const container = document.getElementById('mensagem');
+      if (i < textoMensagem.length) {
+        container.textContent += textoMensagem.charAt(i);
+        i++;
+        setTimeout(digitarTexto, 30);
+      }
+    }
+    window.addEventListener('load', digitarTexto);
+
+    const imagens = document.querySelectorAll('.galeria img');
+    function checkVisible() {
+      const top = window.scrollY + window.innerHeight;
+      imagens.forEach((img) => {
+        if (top > img.offsetTop + 50) {
+          img.classList.add('show');
+        }
+      });
+    }
+    document.addEventListener('scroll', checkVisible);
+    window.addEventListener('load', checkVisible);
+
+    setInterval(() => {
+      const petala = document.createElement('div');
+      petala.classList.add('petala');
+      petala.style.left = Math.random() * 100 + 'vw';
+      petala.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(petala);
+      setTimeout(() => petala.remove(), 10000);
+    }, 500);
+
+    const musicBtn = document.getElementById('music-btn');
+    const audio = document.getElementById('musica');
+    let isPlaying = false;
+    musicBtn.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play();
+        musicBtn.textContent = 'Pausar música ⏸️';
+      } else {
+        audio.pause();
+        musicBtn.textContent = 'Tocar música 🎶';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
